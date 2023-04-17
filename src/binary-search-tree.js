@@ -8,22 +8,22 @@ const { Node } = require('../extensions/list-tree.js');
 */
 class BinarySearchTree {
   constructor() {
-		this.root = null
+		this._head = null
 	}
 
 	root() {
-		if (!this.root) {
+		if (!this._head) {
 			return null
 		}
 
-		return this.root
+		return this._head
 	}
 
 	add(data) {
-		if (!this.root) {
-			this.root = new Node(data)
+		if (!this._head) {
+			this._head = new Node(data)
 		} else {
-			this.addTo(this.root, data)
+			this.addTo(this._head, data)
 		}
 	}
 
@@ -48,11 +48,11 @@ class BinarySearchTree {
 	}
 
 	find(data) {
-		if (!this.root || !this.root.data) {
+		if (!this._head || !this._head.data) {
 			return null
 		}
 
-		return this.findWithParent(this.root, data)
+		return this.findWithParent(this._head, data)
 	}
 
 	findWithParent(node, value) {
@@ -82,13 +82,13 @@ class BinarySearchTree {
 
 
 	min() {
-		const arr = this.convertToArray(this.root)
+		const arr = this.convertToArray(this._head)
 
 		return Math.min(...arr)
 	}
 
 	max() {
-		const arr = this.convertToArray(this.root)
+		const arr = this.convertToArray(this._head)
 
 		return Math.max(...arr)
 	}
