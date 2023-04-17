@@ -18,9 +18,14 @@ class Stack {
     // remove line with error and write your code here
   }
 
-  pop() {
-    throw new NotImplementedError('Not implemented');
-    // remove line with error and write your code here
+  pop()
+  {
+      // return top most element in the stack
+      // and removes it from the stack
+      // Underflow if stack is empty
+      if (this.items.length == 0)
+          return "Underflow";
+      return this.items.pop();
   }
 
   peek() {
